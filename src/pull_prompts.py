@@ -40,12 +40,17 @@ load_dotenv()
 
 
 def pull_prompts_from_langsmith():
-    ...
-
+    cliente = Client()
+    prompt = cliente.pull_prompt(
+        pedromoraes/bug_to_user_story_v1,
+        dangerous_pull_public_prompt=True,
+    )
+    print("retorno do langsmith aí :")
+    print(prompt)
 
 def main():
     """Função principal"""
-    ...
+    pull_prompts_from_langsmith()
 
 
 if __name__ == "__main__":
